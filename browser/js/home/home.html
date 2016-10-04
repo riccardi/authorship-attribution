@@ -1,0 +1,135 @@
+<section id="home">
+  <h1>Authorship Attribution</h1>
+  <form name="determineAuthorForm" ng-submit="determineAuthor(unknownText)">
+    <div class="col-md-12 aligncenter">
+      <!-- <textarea ng-model="unknownText">Paste your text here</textarea> -->
+      <select ng-model="unknownText">
+        <option value="MarkTwain-TheAdventuresOfTomSawyer">The Adventures Of Tom Sawyer</option>
+        <option value="JaneAusten-Emma">Emma</option>
+        <option value="JaneAusten-SenseAndSensibility">Sense And Sensibility</option>
+        <option value="WilliamShakespeare-Macbeth">Macbeth</option>
+        <option value="LewisCarroll-ThroughTheLookingGlass">Through The Looking Glass</option>
+        <option value="CharlesDickens-OliverTwist">Oliver Twist</option>
+        <option value="CharlesDickens-GreatExpectations">Great Expectations</option>
+        <option value="AnthonyTrollope-DoctorThorne">Doctor Thorne</option>
+        <option value="ArthurConanDoyle-TheHoundOfTheBaskervilles">The Hound Of The Baskervilles</option>
+        <option value="ArthurConanDoyle-AStudyInScarlet">A Study In Scarlet</option>
+        <option value="JamesJoyce-Dubliners">Dubliners</option>
+      </select>
+      <button type="submit">Who wrote it?</button><br />
+      {{ authorGuess }}
+    </div>
+
+    <div class="col-md-12">
+    	<h3>Source</h3>
+    	<a href="https://wiki.eecs.yorku.ca/course_archive/2014-15/W/6339/_media/10_1_.1.1.87.754.pdf" target="_blank">Ngram Based Author Profiles For Authorship Attribution</a>
+    </div>
+
+    <div class="col-md-12">
+    	<h3>Known Authors</h3>
+    	<p>Here is a list of authors with profiles and the books that the profiles were created with:</p>
+    	<ul>
+    		<li>Arthur Conan Doyle - The Adventures of Sherlock Holmes</li>
+    		<li>Jane Austen - Pride And Prejudice</li>
+    		<li>Mark Twain - The Adventures of Huckleberry Finn</li>
+    		<li>James Joyce - Ulysses</li>
+    		<li>William Shakespeare - Hamlet</li>
+    		<li>Lewis Carroll - Alice's Adventures In Wonderland</li>
+    		<li>Charles Dickens - A Tale of Two Cities, David Copperfield</li>
+    		<li>Anthony Trollope - The Warden</li>
+    	</ul>
+    </div>
+
+	<div class="col-md-12">
+		<h3>Test Results</h3>
+		<table>
+			<tbody>
+				<tr>
+					<th></th>
+					<th>2-gram</th>
+					<th>3-gram</th>
+					<th>4-gram</th>
+					<th>5-gram</th>		
+				</tr>
+				<tr>
+					<td>Tom Sawyer</td>
+					<td><span class="glyphicon glyphicon-remove"></span>
+					<td><span class="glyphicon glyphicon-remove"></span>
+					<td><span class="glyphicon glyphicon-remove"></span>
+					<td><span class="glyphicon glyphicon-remove"></span>
+				</tr>
+				<tr>
+					<td>Emma</td>
+					<td><span class="glyphicon glyphicon-ok"></span>
+					<td><span class="glyphicon glyphicon-ok"></span>
+					<td><span class="glyphicon glyphicon-ok"></span>
+					<td><span class="glyphicon glyphicon-remove"></span>
+				</tr>
+				<tr>
+					<td>Sense And Sensibility</td>
+					<td><span class="glyphicon glyphicon-ok"></span>
+					<td><span class="glyphicon glyphicon-ok"></span>
+					<td><span class="glyphicon glyphicon-ok"></span>
+					<td><span class="glyphicon glyphicon-ok"></span>
+				</tr>
+				<tr>
+					<td>Macbeth</td>
+					<td><span class="glyphicon glyphicon-ok"></span>
+					<td><span class="glyphicon glyphicon-ok"></span>
+					<td><span class="glyphicon glyphicon-ok"></span>
+					<td><span class="glyphicon glyphicon-remove"></span>
+				</tr>
+				<tr>
+					<td>Through The Looking Glass</td>
+					<td><span class="glyphicon glyphicon-ok"></span>
+					<td><span class="glyphicon glyphicon-ok"></span>
+					<td><span class="glyphicon glyphicon-ok"></span>
+					<td><span class="glyphicon glyphicon-ok"></span>
+				</tr>
+				<tr>
+					<td>Oliver Twist</td>
+					<td><span class="glyphicon glyphicon-ok"></span>
+					<td><span class="glyphicon glyphicon-ok"></span>
+					<td><span class="glyphicon glyphicon-remove"></span>
+					<td><span class="glyphicon glyphicon-remove"></span>
+				</tr>
+				<tr>
+					<td>Great Expectations</td>
+					<td><span class="glyphicon glyphicon-ok"></span>
+					<td><span class="glyphicon glyphicon-ok"></span>
+					<td><span class="glyphicon glyphicon-remove"></span>
+					<td><span class="glyphicon glyphicon-remove"></span>
+				</tr>
+				<tr>
+					<td>Doctor Thorne</td>
+					<td><span class="glyphicon glyphicon-ok"></span>
+					<td><span class="glyphicon glyphicon-ok"></span>
+					<td><span class="glyphicon glyphicon-remove"></span>
+					<td><span class="glyphicon glyphicon-remove"></span>
+				</tr>
+				<tr>
+					<td>The Hound Of The Baskervilles</td>
+					<td><span class="glyphicon glyphicon-ok"></span>
+					<td><span class="glyphicon glyphicon-ok"></span>
+					<td><span class="glyphicon glyphicon-remove"></span>
+					<td><span class="glyphicon glyphicon-remove"></span>
+				</tr>
+				<tr>
+					<td>A Study In Scarlet</td>
+					<td><span class="glyphicon glyphicon-ok"></span>
+					<td><span class="glyphicon glyphicon-ok"></span>
+					<td><span class="glyphicon glyphicon-remove"></span>
+					<td><span class="glyphicon glyphicon-remove"></span>
+				</tr>
+				<tr>
+					<td>Dubliners</td>
+					<td><span class="glyphicon glyphicon-remove"></span>
+					<td><span class="glyphicon glyphicon-remove"></span>
+					<td><span class="glyphicon glyphicon-remove"></span>
+					<td><span class="glyphicon glyphicon-remove"></span>
+				</tr>
+			</tbody>
+		</table>
+	</div>    
+  </form>
+</section>
